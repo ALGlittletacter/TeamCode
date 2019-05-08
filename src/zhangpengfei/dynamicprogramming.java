@@ -12,6 +12,12 @@ package zhangpengfei;
 使得在该方式下，最坏的情况扔的次数比其他任何方式最坏的次数都少。
 也就是设计一种最有效的方式。
  */
+
+/**
+ * 基本思路补充：
+ * 首先随机选一个楼也就是这里的i
+ * 会有两种情况：第一种i层碎了再从第一层试，第i层没碎最坏为100-i
+ */
 public class dynamicprogramming {
     public static int floorThr(int n){
         int[] array=new int[n+1];
@@ -20,6 +26,7 @@ public class dynamicprogramming {
             array[x]=x;
             for(int j=1;j<x;j++){
                 int temp=Math.max(j,array[x-j]+1);
+                //找到临界点
                 if(temp<array[x]){
                     array[x]=temp;
                 }
