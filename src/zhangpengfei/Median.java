@@ -102,7 +102,6 @@ public class Median {
         }
         return 0.0;
     }
-
     public static void main(String[] args) {
         int[] nums1 ={1,3};
         int[] nums2 ={2,4};
