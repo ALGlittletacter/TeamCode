@@ -23,28 +23,23 @@ x.xu@dlut.edu.cn
 
  */
 public class dynamicprogramming {
-    public static int floorThr(int n){
-        int[] array=new int[n+1];
-        array[1]=1;
-        for(int x=2;x<=array.length-1;x++){
-            array[x]=x;
-            for(int j=1;j<x;j++){
-
-                int temp=Math.max(j,array[x-j]+1);//选择max(N,n-n+1)的较大值
-                if(temp<array[x]){//选出最差条件下最有效的
-
-                int temp=Math.max(j,array[x-j]+1);
-                //找到临界点
-                if(temp<array[x]){
-
-                    array[x]=temp;
+    public static int floorThr(int n) {
+        int[] array = new int[n + 1];
+        array[1] = 1;
+        for (int x = 2; x <= array.length - 1; x++) {
+            array[x] = x;
+            for (int j = 1; j < x; j++) {
+                int temp = Math.max(j, array[x - j] + 1);//选择max(N,n-n+1)的较大值
+                if (temp < array[x]) {//选出最差条件下最有效的
+                    array[x] = temp;
                 }
             }
+
         }
         return array[n];
     }
-    public static void main(String args[]) {
-        int res=floorThr(100);
+    public static void main (String args[]){
+        int res = floorThr(100);
         System.out.println(res);
     }
 }
