@@ -12,6 +12,7 @@ package zhangpengfei;
 使得在该方式下，最坏的情况扔的次数比其他任何方式最坏的次数都少。
 也就是设计一种最有效的方式。
  */
+
 /*
 x.xu@dlut.edu.cn
 解释：动态规划入门，
@@ -19,6 +20,7 @@ x.xu@dlut.edu.cn
 这时最坏的情况为100-N。也就是说，采用这种办法，最坏的情况为max{N, 100-N+1}。注意要加一，因为第一次是从第N层开始扔
  定义一个函数F（N），表示N层楼最有效方式最坏情况的次数；
 那么F（N）=min(max(1,1+F(N-1)),max(2,F(N-2)+1),...,max(N-1,1+F(1)))
+
  */
 public class dynamicprogramming {
     public static int floorThr(int n){
@@ -27,8 +29,14 @@ public class dynamicprogramming {
         for(int x=2;x<=array.length-1;x++){
             array[x]=x;
             for(int j=1;j<x;j++){
+
                 int temp=Math.max(j,array[x-j]+1);//选择max(N,n-n+1)的较大值
                 if(temp<array[x]){//选出最差条件下最有效的
+
+                int temp=Math.max(j,array[x-j]+1);
+                //找到临界点
+                if(temp<array[x]){
+
                     array[x]=temp;
                 }
             }
