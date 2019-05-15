@@ -48,10 +48,6 @@ public class Matching {
     }
 
     public static void main(String[] args) {
-        /*
-        s = "barfoothefoobarman",
-            words = ["foo","bar"]
-         */
         String s = "barfoothefoobarman";
         String[] words = {"foo","bar"};
         System.out.println(findSubstring(s,words));
