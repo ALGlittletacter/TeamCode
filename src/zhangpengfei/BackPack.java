@@ -17,7 +17,7 @@ class Good{//物品类
         this.value=value;
         this.weight=weight;
         this.wi=value/weight;
-        
+
     }
 }
 public class BackPack {
